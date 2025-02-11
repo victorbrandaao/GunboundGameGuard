@@ -16,6 +16,17 @@ namespace GunboundGameGuard
             _config = config;
         }
 
+        /// <summary>
+        /// Inicia a execução em uma nova thread.
+        /// </summary>
+        public void StartMonitoring()
+        {
+            new Thread(Run) { IsBackground = true }.Start();
+        }
+
+        /// <summary>
+        /// Executa o monitoramento da injeção de DLL.
+        /// </summary>
         public void Run()
         {
             while (true)
@@ -58,6 +69,12 @@ namespace GunboundGameGuard
         public void ReportViolation(string violation)
         {
             Console.WriteLine($"[DllInjection] {violation}");
+            LogEvent(violation);
+        }
+
+        public void LogEvent(string message)
+        {
+            Console.WriteLine($"[DllInjectionModule] {message}");
         }
     }
 }

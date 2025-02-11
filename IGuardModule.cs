@@ -1,11 +1,16 @@
-﻿using System;
-
-namespace GunboundGameGuard
+﻿namespace GunboundGameGuard
 {
     public interface IGuardModule
     {
-        void Run();
-        void ReportViolation(string violation);
-        event EventHandler<string> LogEvent;
+        /// <summary>
+        /// Registra um evento com a mensagem informada.
+        /// </summary>
+        /// <param name="message">Mensagem a ser registrada.</param>
+        void LogEvent(string message);
+
+        /// <summary>
+        /// Inicia o monitoramento ou verificação do módulo.
+        /// </summary>
+        void StartMonitoring();
     }
 }

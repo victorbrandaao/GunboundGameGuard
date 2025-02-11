@@ -1,0 +1,13 @@
+<Window x:Class="GunboundGameGuard.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Gunbound GameGuard" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="20">
+            <TextBlock Text="Gunbound GameGuard" FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
+            <Button x:Name="StartGuardButton" Content="Iniciar GameGuard" Click="StartGuardButton_Click" Height="40" Width="200" Margin="0,0,0,10"/>
+            <Button x:Name="LaunchGameButton" Content="Iniciar Gunbound" Click="LaunchGameButton_Click" Height="40" Width="200" Margin="0,0,0,10"/>
+            <TextBox x:Name="LogTextBox" Height="250" IsReadOnly="True" VerticalScrollBarVisibility="Auto"/>
+        </StackPanel>
+    </Grid>
+</Window>
